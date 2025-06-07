@@ -1,7 +1,83 @@
+:root {
+  --font_size: 20px;
+  background-color: black;
+}
+
 body {
-  height: 100vh;
-  background: linear-gradient(
-    rgba(86, 32, 184, 0.8),
-    rgba(255, 0, 0, 0) 70.71%
-  );
+  background: linear-gradient(25deg, gray, black);
+  min-height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+header {
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: x-large;
+  margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+}
+
+header button {
+  background-color: black;
+  border: 1px solid black;
+  border-bottom: 1px solid white;
+  color: white;
+  margin: 20px;
+  font-size: calc(var(--font_size) * 1.1);
+  border-radius: 2px;
+}
+
+header button:hover,
+button:focus {
+  border: 1px solid white;
+}
+
+button.activeButton {
+  border: 1px solid red;
+}
+
+h2 {
+  margin-left: 30px;
+  text-shadow:
+    0 0 8px rgba(255, 0, 0, 0.6),
+    0 0 15px rgba(0, 150, 255, 0.5);
+}
+
+.aboutUsWords {
+  background-color: rgba(173, 216, 230, 0.5);
+  margin: 0;
+  padding: var(--font_size);
+  font-size: calc(var(--font_size) * 1.5);
+}
+
+.board_game {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(173, 216, 230, 0.5);
+  border-radius: 10px;
+  font-size: var(--font_size);
+}
+
+.board_game img {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact {
+  font-size: calc(var(--font_size) * 1.5);
+  padding: var(--font_size);
+  background-color: rgba(173, 216, 230, 0.5);
+  margin: 0;
 }
