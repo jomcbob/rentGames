@@ -32,4 +32,17 @@ contactButton.addEventListener("click", () => {
   contactButton.classList.add("activeButton");
 });
 
-games.innerHTML = boardGames;
+boardGamesButton.click();
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".google-search").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.blur();
+      const title = button.id;
+      window.open(
+        `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} game`,
+        "_blank",
+      );
+    });
+  });
+});

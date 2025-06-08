@@ -23,6 +23,7 @@ header {
   position: sticky;
   top: 0;
   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+  z-index: 100;
 }
 
 header button {
@@ -68,6 +69,19 @@ h2 {
   background-color: rgba(173, 216, 230, 0.5);
   border-radius: 10px;
   font-size: var(--font_size);
+  transition:
+    transform 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out;
+}
+
+.board_game:hover {
+  transform: translate(2%, -4%);
+  box-shadow: -12px 12px 8px rgba(0, 0, 0, 0.5);
+}
+
+.board_game a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .board_game img {
@@ -75,9 +89,30 @@ h2 {
   margin-bottom: 8px;
 }
 
+.google-search {
+  background-color: rgba(242, 252, 255, 0.5);
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.google-search:hover,
+.google-search:focus {
+  border: 2px solid black;
+}
+
 .contact {
   font-size: calc(var(--font_size) * 1.5);
   padding: var(--font_size);
   background-color: rgba(173, 216, 230, 0.5);
   margin: 0;
+}
+
+footer {
+  box-sizing: border-box;
+  width: 100vw;
+  background-color: rgba(242, 252, 255, 0.5);
+  display: flex;
+  justify-content: space-around;
+  font-size: xx-large;
+  padding: 2vh;
 }
