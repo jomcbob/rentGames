@@ -24,271 +24,231 @@ import supermbImage from "./img/cardgames/super-m-b.jpg";
 import fluxxImage from "./img/cardgames/fluxx.jpg";
 import dosImage from "./img/cardgames/dos.jpg";
 
-const cardGames = `
-<div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 16px;
-">
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/clumsy-thief#samcart-slide-open-right">
-    <img src="${clumsythiefImage}" alt="Clumsy Thief" height="200px">
-    <div class="info">
-      <div><strong>Clumsy Thief</strong></div>
-      <div>Deposit: $24.99</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="Clumsy Thief" class="google-search">Search wiki</button></div>
-</div>
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right">
-    <img src="${nutsmuttsImage}" alt="Nuts about Mutts" height="200px">
-    <div class="info">
-      <div><strong>Nuts about Mutts</strong></div>
-      <div>Deposit: $22.00</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="Nuts about Mutts" class="google-search">Search wiki</button></div>
-</div>
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right">
-    <img src="${foxImage}" alt="The Fox in the Forest" height="200px">
-    <div class="info">
-      <div><strong>The Fox in the Forest</strong></div>
-      <div>Deposit: $20.00</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="The Fox in the Forest" class="google-search">Search wiki</button></div>
-</div>
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right">
-    <img src="${kryptoImage}" alt="Krypto" height="200px">
-    <div class="info">
-      <div><strong>Krypto</strong></div>
-      <div>Deposit: $20.00</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="Krypto" class="google-search">Search wiki</button></div>
-</div>
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right">
-    <img src="${setImage}" alt="Set" height="200px">
-    <div class="info">
-      <div><strong>Set</strong></div>
-      <div>Deposit: $15.00</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="Set" class="google-search">Search wiki</button></div>
-</div>
-
-<div class="board_game">
-  <a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right">
-    <img src="${anothermanstImage}" alt="Another Man’s Treasure" height="200px">
-    <div class="info">
-      <div><strong>Another Man’s Treasure</strong></div>
-      <div>Deposit: $22.00</div>
-      <div>Rental Price: $0.50/day</div>
-    </div>
-  </a>
-  <div class='buttonDiv'><button id="Another Man’s Treasure" class="google-search">Search wiki</button></div>
-</div>
-
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${tgdImage}" alt="" height="200px">
-  <div><strong>The Great Dalmuti</strong></div>
-  <div>Deposit: $23.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${deckcardsImage}" alt="Deck of Cards" height="200px">
-  <div><strong>Deck of Cards</strong></div>
-  <div>Deposit: $9.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${phasetenImage}" alt="Phase 10" height="200px">
-  <div><strong>Phase 10</strong></div>
-  <div>Deposit: $16.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${spotitImage}" alt="Spot it!" height="200px">
-  <div><strong>Spot it!</strong></div>
-  <div>Deposit: $13.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dwfluxxImage}" alt="Doctor Who Fluxx" height="200px">
-  <div><strong>Doctor Who Fluxx</strong></div>
-  <div>Deposit: $27.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${skullkingImage}" alt="Skull King" height="200px">
-  <div><strong>Skull King</strong></div>
-  <div>Deposit: $21.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${aquest}" alt="Antiquity Quest" height="200px">
-  <div><strong>Antiquity Quest</strong></div>
-  <div>Deposit: $32.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${cyaImage}" alt="Cover Your Assets" height="200px">
-  <div><strong>Cover Your Assets</strong></div>
-  <div>Deposit: $22.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${rodImage}" alt="Reign of Dragoness" height="200px">
-  <div><strong>Reign of Dragoness</strong></div>
-  <div>Deposit: $23.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Gnoming A Round" height="200px">
-  <div><strong>Gnoming A Round</strong></div>
-  <div>Deposit: $22.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${bearsbeesImage}" alt="The Bears and the Bees" height="200px">
-  <div><strong>The Bears and the Bees</strong></div>
-  <div>Deposit: $22.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Sleeping Queens" height="200px">
-  <div><strong>Sleeping Queens</strong></div>
-  <div>Deposit: $17.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Sleeping Queens 2" height="200px">
-  <div><strong>Sleeping Queens 2</strong></div>
-  <div>Deposit: $23.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Skyjo" height="200px">
-  <div><strong>Skyjo</strong></div>
-  <div>Deposit: $25.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Mystic Market" height="200px">
-  <div><strong>Mystic Market</strong></div>
-  <div>Deposit: $25.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${missimImage}" alt="Missionary Impossible" height="200px">
-  <div><strong>Missionary Impossible</strong></div>
-  <div>Deposit: $25.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dragonwoodImage}" alt="Dragonwood" height="200px">
-  <div><strong>Dragonwood</strong></div>
-  <div>Deposit: $25.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${tcgcpImage}" alt="Taco Cat Goat Cheese Pizza" height="200px">
-  <div><strong>Taco Cat Goat Cheese Pizza</strong></div>
-  <div>Deposit: $15.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="The Mind" height="200px">
-  <div><strong>The Mind</strong></div>
-  <div>Deposit: $16.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${herdmImage}" alt="Herd Mentality" height="200px">
-  <div><strong>Herd Mentality</strong></div>
-  <div>Deposit: $30.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Monopoly Bid" height="200px">
-  <div><strong>Monopoly Bid</strong></div>
-  <div>Deposit: $14.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${supermbImage}" alt="Super Mario Bros." height="200px">
-  <div><strong>Super Mario Bros.</strong></div>
-  <div>Deposit: $20.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dominionImage}" alt="Blind Spot" height="200px">
-  <div><strong>Blind Spot</strong></div>
-  <div>Deposit: $29.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${lootImage}" alt="Loot" height="200px">
-  <div><strong>Loot</strong></div>
-  <div>Deposit: $22.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${dosImage}" alt="Does" height="200px">
-  <div><strong>Does</strong></div>
-  <div>Deposit: $22.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-<a href="https://firehen.mysamcart.com/checkout/dominion#samcart-slide-open-right" class="board_game">
-  <img src="${fluxxImage}" alt="Fluxx" height="200px">
-  <div><strong>Fluxx</strong></div>
-  <div>Deposit: $25.00</div>
-  <div>Rental Price: $0.50/day</div>
-</a>
-
-
-</div>
-`;
+const cardGames = [
+  {
+    name: "Another Man’s Treasure",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: anothermanstImage,
+    samCartLink: "another-mans-treasure",
+  },
+  {
+    name: "Antiquity Quest",
+    deposit: 32.0,
+    rentalPrice: 0.5,
+    imgSrc: aquest,
+    samCartLink: "antiquity-quest",
+  },
+  {
+    name: "Blind Spot",
+    deposit: 29.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "blind-spot",
+  },
+  {
+    name: "Clumsy Thief",
+    deposit: 24.99,
+    rentalPrice: 0.5,
+    imgSrc: clumsythiefImage,
+    samCartLink: "clumsy-thief",
+  },
+  {
+    name: "Cover Your Assets",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: cyaImage,
+    samCartLink: "cover-your-assets",
+  },
+  {
+    name: "Deck of Cards",
+    deposit: 9.0,
+    rentalPrice: 0.5,
+    imgSrc: deckcardsImage,
+    samCartLink: "deck-of-cards",
+  },
+  {
+    name: "Does",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: dosImage,
+    samCartLink: "does",
+  },
+  {
+    name: "Doctor Who Fluxx",
+    deposit: 27.0,
+    rentalPrice: 0.5,
+    imgSrc: dwfluxxImage,
+    samCartLink: "doctor-who-fluxx",
+  },
+  {
+    name: "Dragonwood",
+    deposit: 25.0,
+    rentalPrice: 0.5,
+    imgSrc: dragonwoodImage,
+    samCartLink: "dragonwood",
+  },
+  {
+    name: "Fluxx",
+    deposit: 25.0,
+    rentalPrice: 0.5,
+    imgSrc: fluxxImage,
+    samCartLink: "fluxx",
+  },
+  {
+    name: "Gnoming A Round",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "gnoming-a-round",
+  },
+  {
+    name: "Herd Mentality",
+    deposit: 30.0,
+    rentalPrice: 0.5,
+    imgSrc: herdmImage,
+    samCartLink: "herd-mentality",
+  },
+  {
+    name: "Krypto",
+    deposit: 20.0,
+    rentalPrice: 0.5,
+    imgSrc: kryptoImage,
+    samCartLink: "krypto",
+  },
+  {
+    name: "Loot",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: lootImage,
+    samCartLink: "loot",
+  },
+  {
+    name: "Missionary Impossible",
+    deposit: 25.0,
+    rentalPrice: 0.5,
+    imgSrc: missimImage,
+    samCartLink: "missionary-impossible",
+  },
+  {
+    name: "Monopoly Bid",
+    deposit: 14.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "monopoly-bid",
+  },
+  {
+    name: "Mystic Market",
+    deposit: 25.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "mystic-market",
+  },
+  {
+    name: "Nuts about Mutts",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: nutsmuttsImage,
+    samCartLink: "nuts-about-mutts",
+  },
+  {
+    name: "Phase 10",
+    deposit: 16.0,
+    rentalPrice: 0.5,
+    imgSrc: phasetenImage,
+    samCartLink: "phase-10",
+  },
+  {
+    name: "Reign of Dragoness",
+    deposit: 23.0,
+    rentalPrice: 0.5,
+    imgSrc: rodImage,
+    samCartLink: "reign-of-dragoness",
+  },
+  {
+    name: "Set",
+    deposit: 15.0,
+    rentalPrice: 0.5,
+    imgSrc: setImage,
+    samCartLink: "set",
+  },
+  {
+    name: "Skull King",
+    deposit: 21.0,
+    rentalPrice: 0.5,
+    imgSrc: skullkingImage,
+    samCartLink: "skull-king",
+  },
+  {
+    name: "Sleeping Queens",
+    deposit: 17.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "sleeping-queens",
+  },
+  {
+    name: "Sleeping Queens 2",
+    deposit: 23.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "sleeping-queens-2",
+  },
+  {
+    name: "Skyjo",
+    deposit: 25.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "skyjo",
+  },
+  {
+    name: "Spot it!",
+    deposit: 13.0,
+    rentalPrice: 0.5,
+    imgSrc: spotitImage,
+    samCartLink: "spot-it",
+  },
+  {
+    name: "Super Mario Bros.",
+    deposit: 20.0,
+    rentalPrice: 0.5,
+    imgSrc: supermbImage,
+    samCartLink: "super-mario-bros",
+  },
+  {
+    name: "Taco Cat Goat Cheese Pizza",
+    deposit: 15.0,
+    rentalPrice: 0.5,
+    imgSrc: tcgcpImage,
+    samCartLink: "taco-cat-goat-cheese-pizza",
+  },
+  {
+    name: "The Bears and the Bees",
+    deposit: 22.0,
+    rentalPrice: 0.5,
+    imgSrc: bearsbeesImage,
+    samCartLink: "the-bears-and-the-bees",
+  },
+  {
+    name: "The Fox in the Forest",
+    deposit: 20.0,
+    rentalPrice: 0.5,
+    imgSrc: foxImage,
+    samCartLink: "the-fox-in-the-forest",
+  },
+  {
+    name: "The Great Dalmuti",
+    deposit: 23.0,
+    rentalPrice: 0.5,
+    imgSrc: tgdImage,
+    samCartLink: "the-great-dalmuti",
+  },
+  {
+    name: "The Mind",
+    deposit: 16.0,
+    rentalPrice: 0.5,
+    imgSrc: dominionImage,
+    samCartLink: "the-mind",
+  },
+];
 
 export { cardGames };
