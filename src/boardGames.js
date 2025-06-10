@@ -40,14 +40,14 @@ const boardGames = [
     deposit: 52.99,
     rentalPrice: 1.0,
     imgSrc: sevenwondersImage,
-    sameCartLink: "7-wonders",
+    samCartLink: "7-wonders",
   },
   {
     name: "Blokus",
     deposit: 31.99,
     rentalPrice: 1.0,
     imgSrc: blokusImage,
-    sameCartLink: "blokus",
+    samCartLink: "blokus",
   },
   {
     name: "Boggle",
@@ -124,7 +124,7 @@ const boardGames = [
     deposit: 54.99,
     rentalPrice: 1.0,
     imgSrc: imaginiffImage,
-    sameCartLink: "imaginiff",
+    samCartLink: "imaginiff",
     name: "Imaginiff",
   },
   {
@@ -195,7 +195,7 @@ const boardGames = [
     deposit: 22.99,
     rentalPrice: 1.0,
     imgSrc: rummikubImage,
-    samCartLink: "/rummikub",
+    samCartLink: "rummikub",
   },
   {
     name: "Sagrada",
@@ -216,7 +216,7 @@ const boardGames = [
     deposit: 51.99,
     rentalPrice: 1.0,
     imgSrc: smallworldImage,
-    sameCartLink: "smallworld",
+    samCartLink: "smallworld",
   },
   {
     name: "Splendor",

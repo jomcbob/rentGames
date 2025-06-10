@@ -10,7 +10,17 @@ const cardGamesButton = document.querySelector(".cardGamesButton");
 const games = document.querySelector(".games");
 const contactButton = document.querySelector(".contactButton");
 const allButtons = document.querySelectorAll("button");
-const container = document.querySelector(".container");
+
+games.addEventListener("click", (e) => {
+  if (e.target.classList.contains("google-search")) {
+    e.target.blur();
+    const title = e.target.dataset.title;
+    window.open(
+      `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} game`,
+      "_blank",
+    );
+  }
+});
 
 boardGamesButton.addEventListener("click", () => {
   games.classList.remove("nonGrid");
@@ -20,31 +30,22 @@ boardGamesButton.addEventListener("click", () => {
 
   boardGames.forEach((game) => {
     const div = document.createElement("div");
+
     div.innerHTML = `
-    <div class="board_game">
-      <a href="https://firehen.mysamcart.com/checkout/${game.samCartLink}#samcart-slide-open-right">
-        <img src="${game.imgSrc}" alt="" height="200px">
-        <div class="info">
-          <div><strong>${game.name}</strong></div>
-          <div>Deposit: $${game.deposit}</div>
-          <div>Rental Price: $${game.rentalPrice}/day</div>
+      <div class="board_game">
+        <a href="https://firehen.mysamcart.com/checkout/${game.samCartLink}#samcart-slide-open-right">
+          <img src="${game.imgSrc}" alt="" height="200px">
+          <div class="info">
+            <div><strong>${game.name}</strong></div>
+            <div>Deposit: $${game.deposit}</div>
+            <div>Rental Price: $${game.rentalPrice}/day</div>
+          </div>
+        </a>
+        <div class='buttonDiv'>
+          <button class="google-search" data-title="${game.name}">Search Wikipedia</button>
         </div>
-      </a>
-
-    <div class='buttonDiv'><button id="${game.name}" class="google-search">Search Wikipedia</button></div>
-    </div>
+      </div>
     `;
-
-    document.querySelectorAll(".google-search").forEach((button) => {
-      button.addEventListener("click", () => {
-        button.blur();
-        const title = button.id;
-        window.open(
-          `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} game`,
-          "_blank",
-        );
-      });
-    });
 
     games.appendChild(div);
   });
@@ -58,31 +59,22 @@ cardGamesButton.addEventListener("click", () => {
 
   cardGames.forEach((game) => {
     const div = document.createElement("div");
+
     div.innerHTML = `
-    <div class="board_game">
-      <a href="https://firehen.mysamcart.com/checkout/${game.samCartLink}#samcart-slide-open-right">
-        <img src="${game.imgSrc}" alt="" height="200px">
-        <div class="info">
-          <div><strong>${game.name}</strong></div>
-          <div>Deposit: $${game.deposit}</div>
-          <div>Rental Price: $${game.rentalPrice}/day</div>
+      <div class="board_game">
+        <a href="https://firehen.mysamcart.com/checkout/${game.samCartLink}#samcart-slide-open-right">
+          <img src="${game.imgSrc}" alt="" height="200px">
+          <div class="info">
+            <div><strong>${game.name}</strong></div>
+            <div>Deposit: $${game.deposit}</div>
+            <div>Rental Price: $${game.rentalPrice}/day</div>
+          </div>
+        </a>
+        <div class='buttonDiv'>
+          <button class="google-search" data-title="${game.name}">Search Wikipedia</button>
         </div>
-      </a>
-
-    <div class='buttonDiv'><button id="${game.name}" class="google-search">Search Wikipedia</button></div>
-    </div>
+      </div>
     `;
-
-    document.querySelectorAll(".google-search").forEach((button) => {
-      button.addEventListener("click", () => {
-        button.blur();
-        const title = button.id;
-        window.open(
-          `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} game`,
-          "_blank",
-        );
-      });
-    });
 
     games.appendChild(div);
   });
