@@ -1,5 +1,8 @@
 import "./styles.css";
-import { cardGames, boardGames, aboutUs, contact } from "./sections";
+import { cardGames } from "./cardGames";
+import { boardGames } from "./boardGames";
+import { aboutUs } from "./aboutUs";
+import { contact } from "./contactUs";
 
 let boardGamesButton = document.querySelector(".boardGamesButton");
 let aboutUsButton = document.querySelector(".aboutUsButton");
@@ -12,18 +15,40 @@ boardGamesButton.addEventListener("click", () => {
   games.innerHTML = boardGames;
   allButtons.forEach((button) => button.classList.remove("activeButton"));
   boardGamesButton.classList.add("activeButton");
-});
 
-aboutUsButton.addEventListener("click", () => {
-  games.innerHTML = aboutUs;
-  allButtons.forEach((button) => button.classList.remove("activeButton"));
-  aboutUsButton.classList.add("activeButton");
+  document.querySelectorAll(".google-search").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.blur();
+      const title = button.id;
+      window.open(
+        `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} board game`,
+        "_blank",
+      );
+    });
+  });
 });
 
 cardGamesButton.addEventListener("click", () => {
   games.innerHTML = cardGames;
   allButtons.forEach((button) => button.classList.remove("activeButton"));
   cardGamesButton.classList.add("activeButton");
+
+  document.querySelectorAll(".google-search").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.blur();
+      const title = button.id;
+      window.open(
+        `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} card game`,
+        "_blank",
+      );
+    });
+  });
+});
+
+aboutUsButton.addEventListener("click", () => {
+  games.innerHTML = aboutUs;
+  allButtons.forEach((button) => button.classList.remove("activeButton"));
+  aboutUsButton.classList.add("activeButton");
 });
 
 contactButton.addEventListener("click", () => {
@@ -33,16 +58,3 @@ contactButton.addEventListener("click", () => {
 });
 
 boardGamesButton.click();
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".google-search").forEach((button) => {
-    button.addEventListener("click", () => {
-      button.blur();
-      const title = button.id;
-      window.open(
-        `https://en.wikipedia.org/wiki/${encodeURIComponent(title)} game`,
-        "_blank",
-      );
-    });
-  });
-});

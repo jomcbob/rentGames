@@ -52,6 +52,11 @@ h2 {
     0 0 15px rgba(0, 150, 255, 0.5);
 }
 
+.games {
+  padding-bottom: 10vh;
+  height: fit-content;
+}
+
 .aboutUsWords {
   background-color: rgba(173, 216, 230, 0.5);
   margin: 0;
@@ -62,6 +67,7 @@ h2 {
 .board_game {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid #ccc;
   padding: 8px;
   text-decoration: none;
@@ -72,6 +78,7 @@ h2 {
   transition:
     transform 0.5s ease-in-out,
     box-shadow 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .board_game:hover {
@@ -87,6 +94,7 @@ h2 {
 .board_game img {
   display: block;
   margin-bottom: 8px;
+  border-radius: 10px;
 }
 
 .google-search {
@@ -98,6 +106,7 @@ h2 {
 .google-search:hover,
 .google-search:focus {
   border: 2px solid black;
+  cursor: pointer;
 }
 
 .contact {
@@ -108,11 +117,73 @@ h2 {
 }
 
 footer {
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
   box-sizing: border-box;
   width: 100vw;
   background-color: rgba(242, 252, 255, 0.5);
   display: flex;
   justify-content: space-around;
-  font-size: xx-large;
+  font-size: 4vh;
   padding: 2vh;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+
+.info {
+  width: 200px;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 16px);
+  font-size: inherit;
+}
+
+.buttonDiv button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .board_game {
+    font-size: x-large;
+  }
+
+  .buttonDiv {
+    display: flex;
+    justify-content: start;
+    width: 200px;
+  }
+
+  .board_game button {
+    padding: 2vh 2px;
+    font-size: inherit;
+    width: 200px;
+  }
+
+  .board_game:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .google-search:hover,
+  .google-search:focus {
+    border: 2px solid gray;
+  }
+
+  .google-search:active {
+    border: 2px solid black;
+    background-color: white;
+  }
 }
