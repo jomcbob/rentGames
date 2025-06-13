@@ -57,6 +57,8 @@ h2 {
 }
 
 .games {
+  box-sizing: border-box;
+  width: 100%;
   height: fit-content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -142,7 +144,7 @@ h2 {
 }
 
 footer {
-  height: 8vh;
+  min-height: 8vh;
   position: fixed;
   bottom: 0;
   box-sizing: border-box;
@@ -185,37 +187,76 @@ a {
   display: block !important;
 }
 
-.search {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  z-index: 5;
-}
-
-.search:hover {
-  transform: scale(1.1) translate(1px, -2px);
-}
-
 .searchInput {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  width: 50vw;
-  max-width: 600px;
-  transform: translateX(-50%);
+  outline: none;
+  width: 90%;
   font-size: xx-large;
-  z-index: 100000;
   box-sizing: border-box;
-  padding: 8px 12px;
-  background: white;
-  border: 1px solid #ccc;
+  padding: 8px 0 8px 20px;
   border-radius: 6px;
   display: block;
   opacity: 0.8;
+  border: none;
+  height: 6vh;
+  color: rgb(92, 85, 85);
+  background-color: white;
+  border-radius: none;
+  border-radius: 20px;
 }
 
-.hidden {
+.inputBox:has(input:focus) {
+  transform: scale(1.01);
+  outline: none;
+  box-shadow: 0 0 8px 2px limegreen;
+}
+
+.inputBox {
+  height: 6vh;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
+  background-color: white;
+  border-radius: 20px;
+}
+
+.inputBox button {
+  border: none;
+  height: 6vh;
+  width: 6vh;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.inputBox button:hover,
+.inputBox button:focus {
+  background-color: wheat;
+  outline: none;
+}
+
+.inputBox img {
+  height: 2vh;
+  width: 2vh;
+}
+
+.noGames {
+  font-size: xx-large;
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: wheat;
+}
+
+.gamesBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  position: relative;
 }
 
 @media (hover: none) and (pointer: coarse) {

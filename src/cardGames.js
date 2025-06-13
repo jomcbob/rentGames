@@ -26,6 +26,7 @@ import dosImage from "./img/cardgames/dos.jpg"
 import skyjoImage from "./img/cardgames/skyjo.jpg"
 import unoImage from "./img/cardgames/uno.jpg"
 import proofImage from "./img/cardgames/proof.jpg"
+import mysticmarketImage from "./img/cardgames/mystic-market.jpg"
 
 const cardGames = [
   {
@@ -144,7 +145,7 @@ const cardGames = [
     name: "Mystic Market",
     deposit: "24.99",
     rentalPrice: "0.50",
-    imgSrc: dominionImage,
+    imgSrc: mysticmarketImage,
     samCartLink: "mystic-market",
   },
   {

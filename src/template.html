@@ -17,20 +17,22 @@
       <div class="headerButtons">
         <button class="boardGamesButton">Board Games</button>
         <button class="cardGamesButton">Card Games</button>
-        <button class="aboutUsButton">About us</button>
+        <button class="aboutUsButton">Home</button>
         <button class="contactButton">Contact us</button>
       </div>
     </header>
 
-    <img
-      class="search"
-      src="./img/svgs/search.png"
-      alt="Search"
-      width="50"
-      height="50"
-    />
+    <div class="gamesBox">
+      <div class="inputBox">
+        <input type="text" class="searchInput" placeholder="search games..." />
+        <button class="clearInput">
+          <img src="./img/svgs/trash-can.png" alt="" />
+        </button>
+      </div>
+      <div class="games"></div>
+    </div>
 
-    <div class="games"></div>
+    <div class="noGames">We do not have a game with that name.</div>
 
     <footer>
       <div>Founder: <em>Andrew Borlin.</em></div>
