@@ -5,7 +5,7 @@ import { aboutUs } from "./home"
 import { contact } from "./contactUs"
 
 const boardGamesButton = document.querySelector(".boardGamesButton")
-const aboutUsButton = document.querySelector(".aboutUsButton")
+const homeButton = document.querySelector(".homeButton")
 const cardGamesButton = document.querySelector(".cardGamesButton")
 const games = document.querySelector(".games")
 const contactButton = document.querySelector(".contactButton")
@@ -24,10 +24,14 @@ searchInput.addEventListener("input", () => {
 
 clearInput.addEventListener("click", () => {
   if (searchInput.value === "") {
+    searchInput.focus()
     return
   }
   searchInput.value = ""
-  renderGames(isBoardGames ? boardGames : cardGames, "")
+  searchInput.focus()
+  setTimeout(() => {
+    renderGames(isBoardGames ? boardGames : cardGames, "")
+  }, 20)
 })
 
 games.addEventListener("click", (e) => {
@@ -78,6 +82,8 @@ function renderGames(gameType, filter = "") {
     games.appendChild(div)
   })
 
+  equalizeBoardGameHeights()
+
   if (games.children.length === 0) {
     noGames.style.display = "block"
   } else {
@@ -97,12 +103,12 @@ cardGamesButton.addEventListener("click", () => {
   renderGames(cardGames)
 })
 
-aboutUsButton.addEventListener("click", () => {
+homeButton.addEventListener("click", () => {
   inputBox.style.display = "none"
   games.classList.add("nonGrid")
   games.innerHTML = aboutUs
   allButtons.forEach((button) => button.classList.remove("activeButton"))
-  aboutUsButton.classList.add("activeButton")
+  homeButton.classList.add("activeButton")
 })
 
 contactButton.addEventListener("click", () => {
@@ -113,5 +119,53 @@ contactButton.addEventListener("click", () => {
   contactButton.classList.add("activeButton")
 })
 
-boardGamesButton.click()
+function setGamesBoxHeight() {
+  const header = document.querySelector("header")
+  const gamesBox = document.querySelector(".gamesBox")
+
+  const headerHeight = header.offsetHeight
+
+  const newHeight = window.innerHeight - headerHeight
+
+  gamesBox.style.height = `${newHeight}px`
+}
+
+window.addEventListener("load", setGamesBoxHeight)
+window.addEventListener("resize", setGamesBoxHeight)
+
+function equalizeBoardGameHeights() {
+  const cards = Array.from(document.querySelectorAll(".board_game"))
+
+  cards.forEach((card) => {
+    card.style.height = "auto"
+  })
+
+  const rows = {}
+
+  cards.forEach((card) => {
+    const top = card.getBoundingClientRect().top
+    const roundedTop = Math.round(top)
+
+    if (!rows[roundedTop]) {
+      rows[roundedTop] = []
+    }
+    rows[roundedTop].push(card)
+  })
+
+  Object.values(rows).forEach((rowCards) => {
+    let maxHeight = 0
+    rowCards.forEach((card) => {
+      const cardHeight = card.offsetHeight
+      if (cardHeight > maxHeight) maxHeight = cardHeight
+    })
+    rowCards.forEach((card) => {
+      card.style.height = maxHeight + "px"
+    })
+  })
+}
+
+window.addEventListener("load", equalizeBoardGameHeights)
+window.addEventListener("resize", equalizeBoardGameHeights)
+
+homeButton.click()
 searchInput.focus()

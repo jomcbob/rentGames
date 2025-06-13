@@ -27,10 +27,14 @@ import skyjoImage from "./img/cardgames/skyjo.jpg"
 import unoImage from "./img/cardgames/uno.jpg"
 import proofImage from "./img/cardgames/proof.jpg"
 import mysticmarketImage from "./img/cardgames/mystic-market.jpg"
+import gnomingaroundImage from "./img/cardgames/gnoming-a-round.jpg"
+import totallyicgImage from "./img/cardgames/the-t-i-card-game.jpg"
+import sleepingqueensImage from "./img/cardgames/sleeping-queens.jpg"
+import blobbyspizzaImage from "./img/cardgames/blobbys-pizza.jpg"
 
 const cardGames = [
   {
-    name: "Another Man’s Treasure",
+    name: "Another Man's Treasure",
     deposit: "21.99",
     rentalPrice: "0.50",
     imgSrc: anothermanstImage,
@@ -44,11 +48,11 @@ const cardGames = [
     samCartLink: "antiquity-quest",
   },
   {
-    name: "Blind Spot",
-    deposit: "28.99",
+    name: "Blobby's pizza",
+    deposit: "24.99",
     rentalPrice: "0.50",
-    imgSrc: dominionImage,
-    samCartLink: "blind-spot",
+    imgSrc: blobbyspizzaImage,
+    samCartLink: "blobbys-pizza",
   },
   {
     name: "Clumsy Thief",
@@ -72,18 +76,18 @@ const cardGames = [
     samCartLink: "deck-of-cards",
   },
   {
-    name: "Does",
-    deposit: "21.99",
-    rentalPrice: "0.50",
-    imgSrc: dosImage,
-    samCartLink: "does",
-  },
-  {
     name: "Doctor Who Fluxx",
     deposit: "26.99",
     rentalPrice: "0.50",
     imgSrc: dwfluxxImage,
     samCartLink: "doctor-who-fluxx",
+  },
+  {
+    name: "Dos",
+    deposit: "21.99",
+    rentalPrice: "0.50",
+    imgSrc: dosImage,
+    samCartLink: "dos",
   },
   {
     name: "Dragonwood",
@@ -103,7 +107,7 @@ const cardGames = [
     name: "Gnoming A Round",
     deposit: "21.99",
     rentalPrice: "0.50",
-    imgSrc: dominionImage,
+    imgSrc: gnomingaroundImage,
     samCartLink: "gnoming-a-round",
   },
   {
@@ -135,13 +139,6 @@ const cardGames = [
     samCartLink: "missionary-impossible",
   },
   {
-    name: "Proof",
-    deposit: "22.99",
-    rentalPrice: "0.50",
-    imgSrc: proofImage,
-    samCartLink: "proof",
-  },
-  {
     name: "Mystic Market",
     deposit: "24.99",
     rentalPrice: "0.50",
@@ -161,6 +158,13 @@ const cardGames = [
     rentalPrice: "0.50",
     imgSrc: phasetenImage,
     samCartLink: "phase-10",
+  },
+  {
+    name: "Proof",
+    deposit: "22.99",
+    rentalPrice: "0.50",
+    imgSrc: proofImage,
+    samCartLink: "proof",
   },
   {
     name: "Reign of Dragoness",
@@ -184,25 +188,18 @@ const cardGames = [
     samCartLink: "skull-king",
   },
   {
-    name: "Sleeping Queens",
-    deposit: "16.99",
-    rentalPrice: "0.50",
-    imgSrc: dominionImage,
-    samCartLink: "sleeping-queens",
-  },
-  {
-    name: "Sleeping Queens 2",
-    deposit: "22.99",
-    rentalPrice: "0.50",
-    imgSrc: dominionImage,
-    samCartLink: "sleeping-queens-2",
-  },
-  {
     name: "Skyjo",
     deposit: "24.99",
     rentalPrice: "0.50",
     imgSrc: skyjoImage,
     samCartLink: "skyjo",
+  },
+  {
+    name: "Sleeping Queens",
+    deposit: "19.99",
+    rentalPrice: "0.50",
+    imgSrc: sleepingqueensImage,
+    samCartLink: "sleeping-queens",
   },
   {
     name: "Spot it!",
@@ -212,8 +209,8 @@ const cardGames = [
     samCartLink: "spot-it",
   },
   {
-    name: "Super Mario Bros.",
-    deposit: "19.99",
+    name: "Super Mario Bros",
+    deposit: "29.99",
     rentalPrice: "0.50",
     imgSrc: supermbImage,
     samCartLink: "super-mario-bros",
@@ -247,8 +244,15 @@ const cardGames = [
     samCartLink: "the-great-dalmuti",
   },
   {
-    name: "Uno",
-    deposit: "12.99",
+    name: "The totally insane card game!",
+    deposit: "29.99",
+    rentalPrice: "0.50",
+    imgSrc: totallyicgImage,
+    samCartLink: "the-totally-insane-card-game",
+  },
+  {
+    name: "Uno H2o",
+    deposit: "24.99",
     rentalPrice: "0.50",
     imgSrc: unoImage,
     samCartLink: "uno",

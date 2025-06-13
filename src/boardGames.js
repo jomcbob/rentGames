@@ -51,23 +51,23 @@ const boardGames = [
   },
   {
     name: "Boggle",
-    imgSrc: boggleImage,
     deposit: "26.99",
     rentalPrice: "1.00",
+    imgSrc: boggleImage,
     samCartLink: "boggle",
   },
   {
     name: "Codenames",
-    imgSrc: codenamesImage,
     deposit: "26.99",
     rentalPrice: "1.00",
+    imgSrc: codenamesImage,
     samCartLink: "codenames",
   },
   {
     name: "Clue",
-    imgSrc: clueImage,
     deposit: "74.99",
     rentalPrice: "1.00",
+    imgSrc: clueImage,
     samCartLink: "clue",
   },
   {
@@ -79,23 +79,23 @@ const boardGames = [
   },
   {
     name: "Election Night",
-    imgSrc: electionnightImage,
     deposit: "39.99",
     rentalPrice: "1.00",
+    imgSrc: electionnightImage,
     samCartLink: "election-night",
   },
   {
     name: "Evolution",
-    imgSrc: evolutionImage,
     deposit: "49.99",
     rentalPrice: "1.00",
+    imgSrc: evolutionImage,
     samCartLink: "evolution",
   },
   {
     name: "Fort",
-    imgSrc: fortImage,
     deposit: "31.99",
     rentalPrice: "1.00",
+    imgSrc: fortImage,
     samCartLink: "fort",
   },
   {
@@ -107,16 +107,16 @@ const boardGames = [
   },
   {
     name: "Gonuts for Donuts",
-    imgSrc: gonutsfordonutsImage,
     deposit: "29.99",
     rentalPrice: "1.00",
+    imgSrc: gonutsfordonutsImage,
     samCartLink: "gonuts-for-donuts",
   },
   {
     name: "Hues and Cues",
-    imgSrc: huesImage,
     deposit: "29.99",
     rentalPrice: "1.00",
+    imgSrc: huesImage,
     samCartLink: "hues-and-cues",
   },
   {
@@ -128,9 +128,9 @@ const boardGames = [
   },
   {
     name: "Incan Gold",
-    imgSrc: incangoldImage,
     deposit: "29.99",
     rentalPrice: "1.00",
+    imgSrc: incangoldImage,
     samCartLink: "incan-gold",
   },
   {
@@ -149,9 +149,9 @@ const boardGames = [
   },
   {
     name: "Mancala",
-    imgSrc: mancalaImage,
     deposit: "19.99",
     rentalPrice: "1.00",
+    imgSrc: mancalaImage,
     samCartLink: "mancala",
   },
   {
@@ -163,16 +163,16 @@ const boardGames = [
   },
   {
     name: "Qwirkle",
-    imgSrc: qwirkleImage,
     deposit: "34.99",
     rentalPrice: "1.00",
+    imgSrc: qwirkleImage,
     samCartLink: "qwirkle",
   },
   {
     name: "Racko",
-    imgSrc: rackoImage,
     deposit: "54.99",
     rentalPrice: "1.00",
+    imgSrc: rackoImage,
     samCartLink: "racko",
   },
   {
@@ -184,9 +184,9 @@ const boardGames = [
   },
   {
     name: "Royals",
-    imgSrc: royalsImage,
     deposit: "44.99",
     rentalPrice: "1.00",
+    imgSrc: royalsImage,
     samCartLink: "royals",
   },
   {
@@ -232,7 +232,7 @@ const boardGames = [
     samCartLink: "splendor-duel",
   },
   {
-    name: "Start up millonaire",
+    name: "Start Up Millionaire",
     deposit: "29.99",
     rentalPrice: "1.00",
     imgSrc: startupmillImage,
@@ -261,9 +261,9 @@ const boardGames = [
   },
   {
     name: "Trekking the National Parks",
-    imgSrc: trekkingImage,
     deposit: "54.99",
     rentalPrice: "1.00",
+    imgSrc: trekkingImage,
     samCartLink: "trekking-the-national-parks",
   },
   {
@@ -275,9 +275,9 @@ const boardGames = [
   },
   {
     name: "Yahtzee",
-    imgSrc: yahtzeeImage,
     deposit: "19.99",
     rentalPrice: "1.00",
+    imgSrc: yahtzeeImage,
     samCartLink: "yahtzee",
   },
 ]

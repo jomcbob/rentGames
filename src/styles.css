@@ -66,6 +66,8 @@ h2 {
   padding: 20px;
   padding-bottom: 10vh;
   position: relative;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .board_game {
@@ -84,7 +86,6 @@ h2 {
     transform 0.5s ease-in-out,
     box-shadow 0.5s ease-in-out;
   cursor: pointer;
-  height: 100%;
   justify-content: space-between;
 }
 
@@ -155,6 +156,8 @@ footer {
   align-items: center;
   font-size: 4vh;
   padding: 2vh;
+  height: calc(10vh - 20px);
+  z-index: 8;
 }
 
 a {
@@ -171,14 +174,15 @@ a {
 .buttonDiv {
   display: flex;
   justify-content: center;
-  width: calc(100% - 16px);
+  width: 200px;
+  text-align: center;
   font-size: inherit;
 }
 
 .buttonDiv button {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 200px;
   font-size: inherit;
   box-sizing: border-box;
 }
@@ -212,7 +216,7 @@ a {
 
 .inputBox {
   height: 6vh;
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   width: calc(100% - 40px);
@@ -220,6 +224,8 @@ a {
   box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
   background-color: white;
   border-radius: 20px;
+  position: sticky;
+  top: 0;
 }
 
 .inputBox button {
@@ -234,6 +240,7 @@ a {
 .inputBox button:focus {
   background-color: wheat;
   outline: none;
+  opacity: 1;
 }
 
 .inputBox img {
@@ -257,6 +264,17 @@ a {
   align-items: center;
   width: 100vw;
   position: relative;
+
+  height: calc(100vh - calc(header + footer));
+  z-index: 1;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  footer {
+    font-size: 2.5vh;
+    padding: 1vh;
+  }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -273,7 +291,6 @@ a {
   .board_game button {
     padding: 2vh 2px;
     font-size: inherit;
-    width: 200px;
   }
 
   .board_game:hover {
