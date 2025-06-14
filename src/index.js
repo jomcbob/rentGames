@@ -24,14 +24,19 @@ searchInput.addEventListener("input", () => {
 
 clearInput.addEventListener("click", () => {
   if (searchInput.value === "") {
-    searchInput.focus()
+    setTimeout(() => {
+      searchInput.focus()
+    }, 30)
     return
   }
+
   searchInput.value = ""
-  searchInput.focus()
   setTimeout(() => {
     renderGames(isBoardGames ? boardGames : cardGames, "")
   }, 20)
+  setTimeout(() => {
+    searchInput.focus()
+  }, 30)
 })
 
 games.addEventListener("click", (e) => {
@@ -46,11 +51,15 @@ games.addEventListener("click", (e) => {
 })
 
 const initialize = (gameButton) => {
+  searchInput.value = ""
   inputBox.style.display = "flex"
   games.classList.remove("nonGrid")
   games.innerHTML = ""
   allButtons.forEach((button) => button.classList.remove("activeButton"))
   gameButton.classList.add("activeButton")
+  setTimeout(() => {
+    searchInput.focus()
+  }, 30)
 }
 
 function renderGames(gameType, filter = "") {
@@ -167,5 +176,5 @@ function equalizeBoardGameHeights() {
 window.addEventListener("load", equalizeBoardGameHeights)
 window.addEventListener("resize", equalizeBoardGameHeights)
 
-homeButton.click()
+boardGamesButton.click()
 searchInput.focus()

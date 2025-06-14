@@ -33,6 +33,8 @@ import incangoldImage from "./img/incan-gold.jpg"
 import rackoImage from "./img/racko.jpg"
 import mancalaImage from "./img/mancala.jpg"
 import royalsImage from "./img/royals.jpg"
+import dragonwoodImage from "./img/cardgames/dragonwood.jpg"
+import mysticmarketImage from "./img/cardgames/mystic-market.jpg"
 
 const boardGames = [
   {
@@ -90,6 +92,13 @@ const boardGames = [
     rentalPrice: "1.00",
     imgSrc: evolutionImage,
     samCartLink: "evolution",
+  },
+  {
+    name: "Dragonwood",
+    deposit: "24.99",
+    rentalPrice: "1.00",
+    imgSrc: dragonwoodImage,
+    samCartLink: "dragonwood",
   },
   {
     name: "Fort",
@@ -160,6 +169,13 @@ const boardGames = [
     rentalPrice: "1.00",
     imgSrc: monopolyImage,
     samCartLink: "monopoly",
+  },
+  {
+    name: "Mystic Market",
+    deposit: "24.99",
+    rentalPrice: "1.00",
+    imgSrc: mysticmarketImage,
+    samCartLink: "mystic-market",
   },
   {
     name: "Qwirkle",

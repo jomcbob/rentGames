@@ -27,8 +27,17 @@ header {
 }
 
 header button {
+  padding: 0;
+  position: relative;
+  background: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 10px;
   background-color: black;
-  border: 1px solid black;
+  border: 2px solid black;
   border-bottom: 1px solid white;
   color: white;
   margin: 20px;
@@ -36,13 +45,43 @@ header button {
   border-radius: 2px;
 }
 
+header button span {
+  padding: 5px 10px;
+  position: relative;
+  display: inline-block;
+}
+
+header button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: red;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+header button:hover::after,
+header button:focus::after {
+  width: 100%;
+}
+
 header button:hover,
 button:focus {
-  border: 1px solid white;
+  border: 2px solid black;
+  outline: none;
+}
+
+header button.activeButton:hover,
+button.activeButton:focus {
+  border: 2px solid red;
+  outline: none;
 }
 
 button.activeButton {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 h2 {
@@ -270,6 +309,10 @@ a {
   overflow: hidden;
 }
 
+.inputBox button:active {
+  background-color: brown;
+}
+
 @media (max-width: 800px) {
   footer {
     font-size: 2.5vh;
@@ -280,6 +323,10 @@ a {
 @media (hover: none) and (pointer: coarse) {
   .board_game {
     font-size: x-large;
+  }
+
+  .inputBox button:hover {
+    background-color: white;
   }
 
   .buttonDiv {

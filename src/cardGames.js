@@ -15,7 +15,6 @@ import skullkingImage from "./img/cardgames/skull-king.jpg"
 import cyaImage from "./img/cardgames/cover-your-a.jpg"
 import rodImage from "./img/cardgames/reign-of-d.jpg"
 import missimImage from "./img/cardgames/miss-im.jpg"
-import dragonwoodImage from "./img/cardgames/dragonwood.jpg"
 import tcgcpImage from "./img/cardgames/t-c-g-c-p.jpg"
 import bearsbeesImage from "./img/cardgames/bears-bees.jpg"
 import lootImage from "./img/cardgames/loot.jpg"
@@ -26,7 +25,6 @@ import dosImage from "./img/cardgames/dos.jpg"
 import skyjoImage from "./img/cardgames/skyjo.jpg"
 import unoImage from "./img/cardgames/uno.jpg"
 import proofImage from "./img/cardgames/proof.jpg"
-import mysticmarketImage from "./img/cardgames/mystic-market.jpg"
 import gnomingaroundImage from "./img/cardgames/gnoming-a-round.jpg"
 import totallyicgImage from "./img/cardgames/the-t-i-card-game.jpg"
 import sleepingqueensImage from "./img/cardgames/sleeping-queens.jpg"
@@ -90,13 +88,6 @@ const cardGames = [
     samCartLink: "dos",
   },
   {
-    name: "Dragonwood",
-    deposit: "24.99",
-    rentalPrice: "0.50",
-    imgSrc: dragonwoodImage,
-    samCartLink: "dragonwood",
-  },
-  {
     name: "Fluxx",
     deposit: "24.99",
     rentalPrice: "0.50",
@@ -137,13 +128,6 @@ const cardGames = [
     rentalPrice: "0.50",
     imgSrc: missimImage,
     samCartLink: "missionary-impossible",
-  },
-  {
-    name: "Mystic Market",
-    deposit: "24.99",
-    rentalPrice: "0.50",
-    imgSrc: mysticmarketImage,
-    samCartLink: "mystic-market",
   },
   {
     name: "Nuts about Mutts",
