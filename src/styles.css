@@ -10,23 +10,45 @@ body {
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
+  overflow: hidden;
 }
 
 header {
+  position: relative;
   color: white;
   background-color: black;
+  font-size: x-large;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.headerContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: x-large;
-  margin-bottom: 0;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
-  z-index: 100;
 }
 
-header button {
+.hideHeader {
+  box-sizing: border-box;
+  height: fit-content;
+  padding: 10px 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: large;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  border: 2px solid red;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(0, 100%);
+  z-index: 10;
+}
+
+header .headerButtons button {
   padding: 0;
   position: relative;
   background: transparent;
@@ -45,13 +67,13 @@ header button {
   border-radius: 2px;
 }
 
-header button span {
+header .headerButtons button span {
   padding: 5px 10px;
   position: relative;
   display: inline-block;
 }
 
-header button::after {
+header .headerButtons button::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -63,24 +85,24 @@ header button::after {
   transition: width 0.25s ease;
 }
 
-header button:hover::after,
-header button:focus::after {
+header .headerButtons button:hover::after,
+header .headerButtons button:focus::after {
   width: 100%;
 }
 
-header button:hover,
-button:focus {
+header .headerButtons button:hover,
+.headerButtons button:focus {
   border: 2px solid black;
   outline: none;
 }
 
-header button.activeButton:hover,
-button.activeButton:focus {
+header .headerButtons button.activeButton:hover,
+.headerButtons button.activeButton:focus {
   border: 2px solid red;
   outline: none;
 }
 
-button.activeButton {
+.headerButtons button.activeButton {
   border: 2px solid red;
 }
 
@@ -251,6 +273,7 @@ a {
   transform: scale(1.01);
   outline: none;
   box-shadow: 0 0 8px 2px limegreen;
+  z-index: 9999 !important;
 }
 
 .inputBox {
@@ -304,9 +327,15 @@ a {
   width: 100vw;
   position: relative;
 
-  height: calc(100vh - calc(header + footer));
+  height: calc(100vh);
   z-index: 1;
   overflow: hidden;
+  z-index: 10;
+}
+
+.gamesBox.input-focused {
+  position: relative;
+  z-index: 1000;
 }
 
 .inputBox button:active {
@@ -338,6 +367,10 @@ a {
   .board_game button {
     padding: 2vh 2px;
     font-size: inherit;
+  }
+
+  .hideHeader {
+    padding: 2vh 1vh;
   }
 
   .board_game:hover {

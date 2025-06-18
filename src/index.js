@@ -173,6 +173,34 @@ function equalizeBoardGameHeights() {
   })
 }
 
+document.querySelector(".hideHeader").addEventListener("click", () => {
+  const header = document.querySelector("header")
+  const gamesBox = document.querySelector(".gamesBox")
+
+  if (header.classList.contains("slide-up")) {
+    header.scrollIntoView()
+    document.querySelector(".hideHeader").textContent = "Hide header"
+    gamesBox.style.height = setGamesBoxHeight()
+  } else {
+    document.querySelector(".hideHeader").textContent = "Show header"
+    gamesBox.style.height = `${window.innerHeight}px`
+    gamesBox.scrollIntoView()
+  }
+
+  header.classList.toggle("slide-up")
+})
+
+const gamesBox = document.querySelector(".gamesBox")
+const input = document.querySelector(".inputBox input")
+
+input.addEventListener("focus", () => {
+  gamesBox.classList.add("input-focused")
+})
+
+input.addEventListener("blur", () => {
+  gamesBox.classList.remove("input-focused")
+})
+
 window.addEventListener("load", equalizeBoardGameHeights)
 window.addEventListener("resize", equalizeBoardGameHeights)
 
