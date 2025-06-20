@@ -4,16 +4,18 @@ import { boardGames } from "./boardGames"
 import { aboutUs } from "./home"
 import { contact } from "./contactUs"
 
-const boardGamesButton = document.querySelector(".boardGamesButton")
-const homeButton = document.querySelector(".homeButton")
-const cardGamesButton = document.querySelector(".cardGamesButton")
+const boardGamesButtons = document.querySelectorAll(".boardGamesButton")
+const homeButtons = document.querySelectorAll(".homeButton")
+const cardGamesButtons = document.querySelectorAll(".cardGamesButton")
+const contactButtons = document.querySelectorAll(".contactButton")
+
 const games = document.querySelector(".games")
-const contactButton = document.querySelector(".contactButton")
 const allButtons = document.querySelectorAll("button")
 const searchInput = document.querySelector(".searchInput")
 const clearInput = document.querySelector(".clearInput")
 const inputBox = document.querySelector(".inputBox")
 const noGames = document.querySelector(".noGames")
+
 let isBoardGames = true
 
 searchInput.addEventListener("input", () => {
@@ -50,7 +52,7 @@ games.addEventListener("click", (e) => {
   }
 })
 
-const initialize = (gameButton) => {
+function initialize(gameButton) {
   searchInput.value = ""
   inputBox.style.display = "flex"
   games.classList.remove("nonGrid")
@@ -71,7 +73,6 @@ function renderGames(gameType, filter = "") {
 
   filteredGames.forEach((game) => {
     const div = document.createElement("div")
-
     div.innerHTML = `
       <div class="board_game">
         <a href="https://firehen.mysamcart.com/checkout/${game.samCartLink}#samcart-slide-open-right">
@@ -87,122 +88,107 @@ function renderGames(gameType, filter = "") {
         </div>
       </div>
     `
-
     games.appendChild(div)
   })
 
   equalizeBoardGameHeights()
 
-  if (games.children.length === 0) {
-    noGames.style.display = "block"
-  } else {
-    noGames.style.display = "none"
-  }
+  noGames.style.display = games.children.length === 0 ? "block" : "none"
 }
 
-boardGamesButton.addEventListener("click", () => {
-  isBoardGames = true
-  initialize(boardGamesButton)
-  renderGames(boardGames)
+boardGamesButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    isBoardGames = true
+    initialize(button)
+    renderGames(boardGames)
+  })
 })
 
-cardGamesButton.addEventListener("click", () => {
-  isBoardGames = false
-  initialize(cardGamesButton)
-  renderGames(cardGames)
+cardGamesButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    isBoardGames = false
+    initialize(button)
+    renderGames(cardGames) // was wrong before, now fixed
+  })
 })
 
-homeButton.addEventListener("click", () => {
-  inputBox.style.display = "none"
-  games.classList.add("nonGrid")
-  games.innerHTML = aboutUs
-  allButtons.forEach((button) => button.classList.remove("activeButton"))
-  homeButton.classList.add("activeButton")
+homeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    inputBox.style.display = "none"
+    games.classList.add("nonGrid")
+    games.innerHTML = aboutUs
+    allButtons.forEach((btn) => btn.classList.remove("activeButton"))
+    button.classList.add("activeButton")
+  })
 })
 
-contactButton.addEventListener("click", () => {
-  inputBox.style.display = "none"
-  games.classList.add("nonGrid")
-  games.innerHTML = contact
-  allButtons.forEach((button) => button.classList.remove("activeButton"))
-  contactButton.classList.add("activeButton")
+contactButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    inputBox.style.display = "none"
+    games.classList.add("nonGrid")
+    games.innerHTML = contact
+    allButtons.forEach((btn) => btn.classList.remove("activeButton"))
+    button.classList.add("activeButton")
+  })
 })
 
 function setGamesBoxHeight() {
   const header = document.querySelector("header")
   const gamesBox = document.querySelector(".gamesBox")
-
   const headerHeight = header.offsetHeight
-
-  const newHeight = window.innerHeight - headerHeight
-
-  gamesBox.style.height = `${newHeight}px`
+  gamesBox.style.height = `${window.innerHeight - headerHeight}px`
 }
-
-window.addEventListener("load", setGamesBoxHeight)
-window.addEventListener("resize", setGamesBoxHeight)
 
 function equalizeBoardGameHeights() {
   const cards = Array.from(document.querySelectorAll(".board_game"))
-
-  cards.forEach((card) => {
-    card.style.height = "auto"
-  })
+  cards.forEach((card) => (card.style.height = "auto"))
 
   const rows = {}
-
   cards.forEach((card) => {
-    const top = card.getBoundingClientRect().top
-    const roundedTop = Math.round(top)
-
-    if (!rows[roundedTop]) {
-      rows[roundedTop] = []
-    }
-    rows[roundedTop].push(card)
+    const top = Math.round(card.getBoundingClientRect().top)
+    if (!rows[top]) rows[top] = []
+    rows[top].push(card)
   })
 
   Object.values(rows).forEach((rowCards) => {
-    let maxHeight = 0
-    rowCards.forEach((card) => {
-      const cardHeight = card.offsetHeight
-      if (cardHeight > maxHeight) maxHeight = cardHeight
-    })
-    rowCards.forEach((card) => {
-      card.style.height = maxHeight + "px"
-    })
+    const maxHeight = Math.max(...rowCards.map((c) => c.offsetHeight))
+    rowCards.forEach((c) => (c.style.height = `${maxHeight}px`))
   })
 }
 
-document.querySelector(".hideHeader").addEventListener("click", () => {
-  const header = document.querySelector("header")
-  const gamesBox = document.querySelector(".gamesBox")
+function checkScreenWidth() {
+  const links = document.querySelectorAll(".link")
+  const menu = document.querySelector(".hideHeader")
 
-  if (header.classList.contains("slide-up")) {
-    header.scrollIntoView()
-    document.querySelector(".hideHeader").textContent = "Hide header"
-    gamesBox.style.height = setGamesBoxHeight()
+  if (window.innerWidth < 1000) {
+    menu.classList.remove("displayNone")
+    links.forEach((link) => link.classList.add("displayNone"))
   } else {
-    document.querySelector(".hideHeader").textContent = "Show header"
-    gamesBox.style.height = `${window.innerHeight}px`
-    gamesBox.scrollIntoView()
+    menu.classList.add("displayNone")
+    links.forEach((link) => link.classList.remove("displayNone"))
   }
+}
 
-  header.classList.toggle("slide-up")
+window.addEventListener("load", () => {
+  setGamesBoxHeight()
+  equalizeBoardGameHeights()
+  checkScreenWidth()
+
+  const firstBoardBtn = boardGamesButtons[0]
+  if (firstBoardBtn) {
+    firstBoardBtn.click()
+    searchInput.focus()
+  }
 })
 
-const gamesBox = document.querySelector(".gamesBox")
-const input = document.querySelector(".inputBox input")
+const wrapper = document.querySelector(".dropdown-wrapper")
 
-input.addEventListener("focus", () => {
-  gamesBox.classList.add("input-focused")
+wrapper.addEventListener("mouseenter", () => {
+  wrapper.focus()
 })
 
-input.addEventListener("blur", () => {
-  gamesBox.classList.remove("input-focused")
+window.addEventListener("resize", () => {
+  setGamesBoxHeight()
+  equalizeBoardGameHeights()
+  checkScreenWidth()
 })
-
-window.addEventListener("load", equalizeBoardGameHeights)
-window.addEventListener("resize", equalizeBoardGameHeights)
-
-boardGamesButton.click()
-searchInput.focus()

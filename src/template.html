@@ -14,15 +14,31 @@
   <body>
     <header>
       <div class="headerContent">
-        <h2>Rent - A - Game</h2>
+        <h1>Rent - A - Game</h1>
         <div class="headerButtons">
-          <button class="boardGamesButton"><span>Tabletop Games</span></button>
-          <button class="cardGamesButton"><span>Card Games</span></button>
-          <button class="homeButton"><span>Home</span></button>
-          <button class="contactButton"><span>Contact us</span></button>
+          <button class="boardGamesButton link">
+            <span>Tabletop Games</span>
+          </button>
+          <button class="cardGamesButton link"><span>Card Games</span></button>
+          <button class="homeButton link"><span>Home</span></button>
+          <button class="contactButton link"><span>Contact us</span></button>
+          <div class="dropdown-wrapper" tabindex="0">
+            <div class="hideHeader">
+              <img src="./img/svgs/menu-symbol.svg" alt="" />
+            </div>
+            <div class="dropdown-content">
+              <div class="dropdownButtons">
+                <button class="boardGamesButton">
+                  <span>Tabletop Games</span>
+                </button>
+                <button class="cardGamesButton"><span>Card Games</span></button>
+                <button class="homeButton"><span>Home</span></button>
+                <button class="contactButton"><span>Contact us</span></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="hideHeader">Hide header</button>
     </header>
 
     <div class="gamesBox">
