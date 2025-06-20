@@ -52,6 +52,10 @@ games.addEventListener("click", (e) => {
   }
 })
 
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0
+}
+
 function initialize(gameButton) {
   searchInput.value = ""
   inputBox.style.display = "flex"
@@ -59,9 +63,11 @@ function initialize(gameButton) {
   games.innerHTML = ""
   allButtons.forEach((button) => button.classList.remove("activeButton"))
   gameButton.classList.add("activeButton")
-  setTimeout(() => {
-    searchInput.focus()
-  }, 30)
+  if (!isTouchDevice()) {
+    setTimeout(() => {
+      searchInput.focus()
+    }, 30)
+  }
 }
 
 function renderGames(gameType, filter = "") {
@@ -92,7 +98,6 @@ function renderGames(gameType, filter = "") {
   })
 
   equalizeBoardGameHeights()
-
   noGames.style.display = games.children.length === 0 ? "block" : "none"
 }
 
@@ -108,7 +113,7 @@ cardGamesButtons.forEach((button) => {
   button.addEventListener("click", () => {
     isBoardGames = false
     initialize(button)
-    renderGames(cardGames) // was wrong before, now fixed
+    renderGames(cardGames)
   })
 })
 
@@ -136,6 +141,7 @@ function setGamesBoxHeight() {
   const header = document.querySelector("header")
   const gamesBox = document.querySelector(".gamesBox")
   const headerHeight = header.offsetHeight
+
   gamesBox.style.height = `${window.innerHeight - headerHeight}px`
 }
 
@@ -181,14 +187,13 @@ window.addEventListener("load", () => {
   }
 })
 
-const wrapper = document.querySelector(".dropdown-wrapper")
-
-wrapper.addEventListener("mouseenter", () => {
-  wrapper.focus()
-})
-
 window.addEventListener("resize", () => {
   setGamesBoxHeight()
   equalizeBoardGameHeights()
   checkScreenWidth()
+})
+
+const wrapper = document.querySelector(".dropdown-wrapper")
+wrapper.addEventListener("mouseenter", () => {
+  wrapper.focus()
 })
